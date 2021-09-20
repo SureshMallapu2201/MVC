@@ -1,0 +1,63 @@
+﻿@model MVC.Models.user
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("SaveUser", "User")){
+<div class="panel">
+
+    <div class="panel-heading">
+        Create User
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                FirstName:
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-12"></div>
+        <div class="col-md-12">
+            <div class="col-md-3">
+                LastName:
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-12"></div>
+        <div class="col-md-12"></div>
+        <div class="col-md-12">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-3">
+                <input type="submit" value="Save" class="btn-sm btn-success" />
+            </div>
+        </div>
+        @if (@ViewBag.message != null)
+        {
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <span style="color:green"> @ViewBag.message</span>
+                </div>
+            </div>
+
+        }
+        @if (@ViewBag.Errormessage != null)
+        {
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <span style="color:red"> @ViewBag.Errormessage</span>
+                </div>
+            </div>
+
+        }
+
+    </div>
+    </div> 
+}
+
+
